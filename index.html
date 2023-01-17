@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Ubuntu:500&display=swap');
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #ebf5fc;
+      }
+      .header {
+        font-size: 100px;
+      }
+      .header,
+      .number {
+        margin-bottom: 35px;
+        text-align: center;
+      }
+      .number {
+        font-size: 200px;
+      }
+      .text {
+        background: -webkit-linear-gradient(245deg, #1e71f5, #3cdee7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .button {
+        font-size: 15px;
+        width: 100%;
+        padding: 20px;
+        cursor: pointer;
+        background: linear-gradient(145deg, #f2f7fb, #e9f2fb);
+        box-shadow: 5px 5px 15px #d9e3ec;
+        border: none;
+        border-radius: 10px;
+        outline: none;
+      }
+    </style>
+    <title>Lucky Draw</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="container__elements">
+        <div>
+          <h1 class="number text"></h1>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function randomInRange(start, end) {
+        return Math.floor(Math.random() * (end - start + 1) + start);
+      }
+
+      const displayHeader = document.querySelector('.number');
+      displayHeader.innerHTML = randomInRange(0, 400);
+    </script>
+  </body>
+</html>
